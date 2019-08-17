@@ -1,30 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center|top"
+    android:orientation="vertical"
     tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="181dp"
-        android:layout_height="127dp"
-        android:layout_margin="@dimen/marginButtonForLayout"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:text="@string/buttonCameraName"
-        app:srcCompat="@android:drawable/ic_menu_camera"/>
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="222dp"
-        android:layout_height="104dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_width="262dp"
+        android:layout_height="119dp"
         android:layout_marginStart="113dp"
         android:layout_marginLeft="113dp"
         android:layout_marginTop="35dp"
@@ -32,5 +18,29 @@
         android:layout_marginRight="76dp"
         android:text="@string/appNameText"
         android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_marginStart="@dimen/marginButtonForLayout"
+        android:layout_marginEnd="@dimen/marginButtonForLayout"
+        android:text="@string/Login" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="288dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="@dimen/marginButtonForLayout"
+        android:layout_marginEnd="@dimen/marginButtonForLayout"
+        android:text="@string/buttonCameraName" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="288dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="@dimen/marginButtonForLayout"
+        android:layout_marginEnd="@dimen/marginButtonForLayout"
+        tools:text="show me my glasses" />
 
 </>
