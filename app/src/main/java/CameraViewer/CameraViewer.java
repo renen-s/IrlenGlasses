@@ -33,7 +33,6 @@ public class CameraViewer extends Activity implements TextureView.SurfaceTexture
         setContentView(textureView);
     }
 
-    @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
 
         mSurfaceTexture = surface;
@@ -44,19 +43,19 @@ public class CameraViewer extends Activity implements TextureView.SurfaceTexture
         }
     }
 
-    @Override
+
     public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
         // Ignored, Camera does all the work for us
     }
 
-    @Override
+
     public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
         mCamera.stopPreview();
         mCamera.release();
         return true;
     }
 
-    @Override
+
     public void onSurfaceTextureUpdated(SurfaceTexture surface) {
         // Invoked every time there's a new Camera preview frame
         //Log.d(TAG, "updated, ts=" + surface.getTimestamp());
