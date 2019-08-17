@@ -4,4 +4,5 @@
     <string name="buttonCameraName">Camera view</string>
     <string name="appNameText">IrelanGlasses App</string>
     <string name="Login">login user</string>
+    <string name="logoDesc">IrlenLogo</string>
 </resources>
