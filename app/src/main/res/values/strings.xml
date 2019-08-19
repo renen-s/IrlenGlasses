@@ -5,4 +5,10 @@
     <string name="appNameText">IrelanGlasses App</string>
     <string name="Login">login user</string>
     <string name="logoDesc">IrlenLogo</string>
+    <string name="UserName">שם משתמש</string>
+    <string name="PasswordTxt">סיסמה</string>
+    <string name="LogoPic">LogoPic</string>
+    <string name="Pswd_Lbl">Password</string>
+    <string name="PassHint">00000000</string>
+    <string name="pictures">picture</string>
 </resources>
