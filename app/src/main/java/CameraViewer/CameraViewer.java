@@ -14,12 +14,12 @@ import androidx.annotation.NonNull;
 
 import java.io.IOException;
 
-import PremissionHelper.PremissionHelper;
+import PremissionHelper.PermissionHelper;
 
 
 public class CameraViewer extends Activity implements TextureView.SurfaceTextureListener {
 
-    private PremissionHelper PremissionHelper;
+    private PermissionHelper PermissionHelper;
     private Camera mCamera;
     private SurfaceTexture mSurfaceTexture;
 
@@ -36,8 +36,8 @@ public class CameraViewer extends Activity implements TextureView.SurfaceTexture
     public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
 
         mSurfaceTexture = surface;
-        if (!PremissionHelper.hasCameraPermission(this)) {
-            PremissionHelper.requestCameraPermission(this, false);
+        if (!PermissionHelper.hasCameraPermission(this)) {
+            PermissionHelper.requestCameraPermission(this, false);
         } else {
             startPreview();
         }
@@ -65,10 +65,10 @@ public class CameraViewer extends Activity implements TextureView.SurfaceTexture
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (!PremissionHelper.hasCameraPermission(this)) {
+        if (!PermissionHelper.hasCameraPermission(this)) {
             Toast.makeText(this,
                     "Camera permission is needed to run this application", Toast.LENGTH_LONG).show();
-            PremissionHelper.launchPermissionSettings(this);
+            PermissionHelper.launchPermissionSettings(this);
             finish();
         } else {
             startPreview();
