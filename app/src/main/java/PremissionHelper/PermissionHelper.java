@@ -12,7 +12,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 
-public class PremissionHelper {
+public class PermissionHelper {
 
     public static final int RC_PERMISSION_REQUEST = 9222;
 
