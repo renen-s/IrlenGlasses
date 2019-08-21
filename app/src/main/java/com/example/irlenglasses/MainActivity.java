@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
-            btn = findViewById(R.id.button);
+            btn = findViewById(R.id.filterCameraView);
             btn.setOnClickListener(new View.OnClickListener() {
 
                 public void onClick(View v) {
