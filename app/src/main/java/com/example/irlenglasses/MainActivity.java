@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             btn.setOnClickListener(new View.OnClickListener() {
 
                 public void onClick(View v) {
-                    Intent i = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
+                    Intent i = new Intent(MediaStore.INTENT_ACTION_VIDEO_CAMERA);
                     startActivity(i);
                 }
             });

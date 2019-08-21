@@ -11,4 +11,5 @@
     <string name="pswd_Lbl">Password</string>
     <string name="passHint">00000000</string>
     <string name="pictures">picture</string>
+    <string name="ARViewText">show me my glasses</string>
 </resources>
