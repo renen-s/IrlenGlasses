@@ -12,4 +12,12 @@
     <string name="passHint">00000000</string>
     <string name="pictures">picture</string>
     <string name="ARViewText">show me my glasses</string>
+    <string name="CreateText">פרטי משתמש</string>
+    <string name="firstname">שם פרטי</string>
+    <string name="lastName">שם משפחה</string>
+    <string name="ID">תעודת זהות</string>
+    <string name="RadioCus">לקוח</string>
+    <string name="RadioDia">מאבחן</string>
+    <string name="FNameHint">שם פרטי</string>
+    <string name="IDHint">תעודת זהות</string>
 </resources>
