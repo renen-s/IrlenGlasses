@@ -3,12 +3,13 @@
     <string name="action_settings">Settings</string>
     <string name="buttonCameraName">Camera view</string>
     <string name="appNameText">IrelanGlasses App</string>
-    <string name="Login">login user</string>
+    <string name="login">login user</string>
     <string name="logoDesc">IrlenLogo</string>
-    <string name="UserName">שם משתמש</string>
-    <string name="PasswordTxt">סיסמה</string>
-    <string name="LogoPic">LogoPic</string>
-    <string name="Pswd_Lbl">Password</string>
-    <string name="PassHint">00000000</string>
+    <string name="userName">שם משתמש</string>
+    <string name="passwordTxt">סיסמה</string>
+    <string name="logoPic">LogoPic</string>
+    <string name="pswd_Lbl">Password</string>
+    <string name="passHint">00000000</string>
     <string name="pictures">picture</string>
+    <string name="ARViewText">show me my glasses</string>
 </resources>

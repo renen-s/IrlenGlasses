@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#59FFDAD8"
-    android:contentDescription="@string/LogoPic"
+    android:contentDescription="@string/logoPic"
     android:orientation="vertical"
     android:visibility="visible"
     tools:visibility="visible">
@@ -36,7 +36,7 @@
         android:layout_marginEnd="-120dp"
         android:layout_marginRight="-120dp"
         android:layout_marginBottom="-147dp"
-        android:text="@string/UserName"
+        android:text="@string/userName"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -54,7 +54,7 @@
         android:layout_marginEnd="-115dp"
         android:layout_marginRight="-115dp"
         android:layout_marginBottom="-246dp"
-        android:text="@string/PasswordTxt"
+        android:text="@string/passwordTxt"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -73,7 +73,7 @@
         android:autofillHints=""
         android:background="@android:drawable/screen_background_light"
         android:ems="10"
-        android:hint="@string/PassHint"
+        android:hint="@string/passHint"
         android:inputType="numberPassword"
         android:shadowColor="#FFFFFF"
         android:visibility="visible" />
@@ -93,8 +93,8 @@
         android:autofillHints=""
         android:background="@android:drawable/screen_background_light"
         android:ems="10"
-        android:hint="@string/PassHint"
-        android:imeActionLabel="@string/Pswd_Lbl"
+        android:hint="@string/passHint"
+        android:imeActionLabel="@string/pswd_Lbl"
         android:inputType="numberPassword"
         android:visibility="visible" />
 

@@ -27,10 +27,10 @@
         android:layout_weight="1"
         android:bufferType="normal"
         android:ellipsize="none"
-        android:text="@string/Login" />
+        android:text="@string/login" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/filterCameraView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -41,6 +41,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        tools:text="show me my glasses" />
+        android:text="@string/ARViewText" />
 
 </LinearLayout>
