@@ -20,4 +20,8 @@
     <string name="RadioDia">מאבחן</string>
     <string name="FNameHint">שם פרטי</string>
     <string name="IDHint">תעודת זהות</string>
+    <string name="Login">התחבר</string>
+    <string name="select_color">בחר גוון</string>
+    <string name="Create_User">צור משתמש</string>
+    <string name="select_color_rgb">בחר גוון RGB</string>
 </resources>
