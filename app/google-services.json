@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "832256540646",
+    "firebase_url": "https://irlenglasses.firebaseio.com",
+    "project_id": "irlenglasses",
+    "storage_bucket": "irlenglasses.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:832256540646:android:d55cc65bd8412bed",
+        "android_client_info": {
+          "package_name": "com.irlenglasses"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "832256540646-q9s0no88s6rouvl0udum1hvp5qug9l63.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzUFP5YTDZ-6XTpbc4l3rktsQX3n8-2mw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "832256540646-q9s0no88s6rouvl0udum1hvp5qug9l63.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

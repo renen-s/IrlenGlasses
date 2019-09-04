@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/MainLayout"
@@ -8,12 +8,14 @@
     android:background="#80FFDAD8"
     android:gravity="center|top"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".customer.MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="636dp"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
         android:layout_weight="1"
         android:contentDescription="@string/logoDesc"
         android:scaleType="centerInside"
@@ -21,26 +23,14 @@
         tools:srcCompat="@drawable/logo" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:bufferType="normal"
-        android:ellipsize="none"
-        android:text="@string/login" />
-
-    <Button
         android:id="@+id/filterCameraView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="24dp"
         android:layout_weight="1"
         android:text="@string/buttonCameraName" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="@string/ARViewText" />
 
-</LinearLayout>
+</RelativeLayout>
