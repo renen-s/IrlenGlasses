@@ -13,9 +13,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.annotations.NotNull;
 import com.irlenglasses.R;
 import com.irlenglasses.database.DatabaseAPI;
 import com.irlenglasses.database.models.DatabaseCameraColor;
@@ -130,7 +130,7 @@ public class CreateUserActivity extends AppCompatActivity implements
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(@NotNull MenuItem item) {
         switch(item.getItemId())
         {
             case R.id.action_create_user:
