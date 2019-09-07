@@ -15,12 +15,12 @@ import android.provider.MediaStore;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.core.content.FileProvider;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.annotations.NotNull;
 import com.irlenglasses.BuildConfig;
 import com.irlenglasses.R;
 import com.irlenglasses.database.DatabaseAPI;
@@ -75,7 +75,7 @@ public class CameraViewer extends Activity {
     Uri currImageUriTakenFromCamera = null;
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NotNull String[] permissions, @NotNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == MY_CAMERA_PERMISSION_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
@@ -142,7 +142,7 @@ public class CameraViewer extends Activity {
 
                 DatabaseAPI.getInstance().SetCameraColorListener(mUserID, new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    public void onDataChange(@NotNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.exists()) {
                             DatabaseCameraColor cameraColor = dataSnapshot.getValue(DatabaseCameraColor.class);
                             if(cameraColor != null) {
@@ -182,7 +182,7 @@ public class CameraViewer extends Activity {
                     }
 
                     @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                    public void onCancelled(@NotNull DatabaseError databaseError) {
 
                     }
                 });
