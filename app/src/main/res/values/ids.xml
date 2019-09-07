@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <item name="button1" type="id" />
+    <item name="loginButton" type="id" />
+    <item name="action_create_user" type="id" />
 </resources>

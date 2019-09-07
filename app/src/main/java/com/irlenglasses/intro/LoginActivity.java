@@ -7,12 +7,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.annotations.NotNull;
 import com.irlenglasses.R;
 import com.irlenglasses.customer.MainActivity;
 import com.irlenglasses.database.DatabaseAPI;
@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
 
         DatabaseAPI.getInstance().SetUserListener(password, new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NotNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()) {
                     DatabaseUser databaseUser = dataSnapshot.getValue(DatabaseUser.class);
                     if(databaseUser != null) {
@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            public void onCancelled(@NotNull DatabaseError databaseError) {
 
             }
         });
