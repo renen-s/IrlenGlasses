@@ -38,13 +38,15 @@ public class CameraViewer extends Activity {
     private static final String greenRGB = "90EE90";
     private static final String blueRGB = "87CEFA";
     private static final String yellowRGB = "FFFF00";
+    private static final String purpleRGB = "A5A1FF";
+    private static final String grayRGB = "E6E6E6";
+    private static final String pinkRGB = "FFDCF1";
 
     private ImageView imageView;
     private String mUserID = "";
 
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_view);
 
@@ -53,14 +55,11 @@ public class CameraViewer extends Activity {
         mUserID = getIntent().getStringExtra("user_id");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
-            {
+            if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
                 requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_PERMISSION_CODE);
-            }
-            else
-            {
+            } else {
                 try {
-                    currImageUriTakenFromCamera = createImageFile(this);;
+                    currImageUriTakenFromCamera = createImageFile(this);
                     Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                     cameraIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                     cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, currImageUriTakenFromCamera);
@@ -78,10 +77,9 @@ public class CameraViewer extends Activity {
     public void onRequestPermissionsResult(int requestCode, @NotNull String[] permissions, @NotNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == MY_CAMERA_PERMISSION_CODE) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
-            {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 try {
-                    currImageUriTakenFromCamera = createImageFile(this);;
+                    currImageUriTakenFromCamera = createImageFile(this);
                     Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                     cameraIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                     cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, currImageUriTakenFromCamera);
@@ -89,24 +87,20 @@ public class CameraViewer extends Activity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }
-            else
-            {
+            } else {
                 Toast.makeText(this, "camera permission denied", Toast.LENGTH_LONG).show();
             }
         }
     }
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
-        if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK)
-        {
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             Uri imageUri = null;
-            if(currImageUriTakenFromCamera != null) {
+            if (currImageUriTakenFromCamera != null) {
                 imageUri = currImageUriTakenFromCamera;
                 currImageUriTakenFromCamera = null;
             }
-            if(imageUri != null) {
+            if (imageUri != null) {
                 loadImageFromExternalStorage(imageUri);
             }
         }
@@ -117,7 +111,7 @@ public class CameraViewer extends Activity {
         File currImageFileTakenFromCamera = null;
         try {
             currImageFileTakenFromCamera = UtilitiesFiles.createImageFile(context);
-            if(currImageFileTakenFromCamera != null) {
+            if (currImageFileTakenFromCamera != null) {
                 uri = FileProvider.getUriForFile(context,
                         BuildConfig.APPLICATION_ID + ".provider",
                         currImageFileTakenFromCamera);
@@ -143,30 +137,38 @@ public class CameraViewer extends Activity {
                 DatabaseAPI.getInstance().SetCameraColorListener(mUserID, new ValueEventListener() {
                     @Override
                     public void onDataChange(@NotNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.exists()) {
+                        if (dataSnapshot.exists()) {
                             DatabaseCameraColor cameraColor = dataSnapshot.getValue(DatabaseCameraColor.class);
-                            if(cameraColor != null) {
+                            if (cameraColor != null) {
                                 String colorName = cameraColor.getColorName();
                                 String alpha = "99";
                                 String currColor = alpha + cameraColor.getColorID();
 
-                                if(colorName != null && !colorName.isEmpty()) {
+                                if (colorName != null && !colorName.isEmpty()) {
                                     switch (colorName) {
                                         case "None":
                                             break;
                                         case "Red":
-                                            currColor = alpha+redRGB;
+                                            currColor = alpha + redRGB;
                                             break;
                                         case "Green":
-                                            currColor = alpha+greenRGB;
+                                            currColor = alpha + greenRGB;
                                             break;
                                         case "Blue":
-                                            currColor = alpha+blueRGB;
+                                            currColor = alpha + blueRGB;
                                             break;
                                         case "Yellow":
-                                            currColor = alpha+yellowRGB;
+                                            currColor = alpha + yellowRGB;
                                             break;
-
+                                        case "Purple":
+                                            currColor = alpha + purpleRGB;
+                                            break;
+                                        case "Gray":
+                                            currColor = alpha + grayRGB;
+                                            break;
+                                        case "Pink":
+                                            currColor = alpha + pinkRGB;
+                                            break;
                                     }
                                 }
                                 final int intColor = Color.parseColor("#" + currColor);

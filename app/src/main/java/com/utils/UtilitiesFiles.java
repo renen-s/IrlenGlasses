@@ -28,7 +28,7 @@ public class UtilitiesFiles {
             public void run() {
                 try {
                     Bitmap selectedImage = UtilitiesFiles.getImageBitmap(context, uri);
-                    if(onImageFetchedFormStorage != null) {
+                    if (onImageFetchedFormStorage != null) {
                         onImageFetchedFormStorage.onComplete(selectedImage);
                     }
                 } catch (FileNotFoundException e) {
@@ -56,8 +56,8 @@ public class UtilitiesFiles {
         final InputStream imageStream = context.getContentResolver().openInputStream(uri);
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = false;
-        Bitmap selectedImage = BitmapFactory.decodeStream(imageStream, null , options);
-        if(selectedImage != null) {
+        Bitmap selectedImage = BitmapFactory.decodeStream(imageStream, null, options);
+        if (selectedImage != null) {
             selectedImage = UtilitiesFiles.checkRotation(context, uri, selectedImage);
         }
 
@@ -70,6 +70,7 @@ public class UtilitiesFiles {
 
         return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(), matrix, true);
     }
+
     public static Bitmap checkRotation(Context context, Uri imageUri, Bitmap bitmap) {
         ExifInterface ei = null;
         InputStream imageStream = null;
@@ -81,14 +82,13 @@ public class UtilitiesFiles {
 
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                if(imageStream != null) {
+                if (imageStream != null) {
                     ei = new ExifInterface(imageStream);
                 }
-            }
-            else {
+            } else {
                 ei = new ExifInterface(imageUri.getPath());
             }
-            if(ei != null) {
+            if (ei != null) {
                 int orientation = ei.getAttributeInt(ExifInterface.TAG_ORIENTATION,
                         ExifInterface.ORIENTATION_UNDEFINED);
 

@@ -9,7 +9,7 @@ public class DatabaseAPI {
     private static DatabaseAPI instance = null;
 
     public static DatabaseAPI getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new DatabaseAPI();
         }
         return instance;

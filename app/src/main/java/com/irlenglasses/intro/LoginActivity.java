@@ -41,12 +41,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private void onLoginButtonClicked() {
         final String userName = userNameEditTxt.getText().toString();
-        if(userName.isEmpty()) {
+        if (userName.isEmpty()) {
             Toast.makeText(this, "לא הוזן שם משתמש", Toast.LENGTH_SHORT).show();
             return;
         }
         String password = passwordEditText.getText().toString();
-        if(password.isEmpty()) {
+        if (password.isEmpty()) {
             Toast.makeText(this, "לא הוזנה סיסמא", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -54,28 +54,25 @@ public class LoginActivity extends AppCompatActivity {
         DatabaseAPI.getInstance().SetUserListener(password, new ValueEventListener() {
             @Override
             public void onDataChange(@NotNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()) {
+                if (dataSnapshot.exists()) {
                     DatabaseUser databaseUser = dataSnapshot.getValue(DatabaseUser.class);
-                    if(databaseUser != null) {
-                        if(userName.equalsIgnoreCase(databaseUser.getFirstName()+databaseUser.getLastName())) {
-                            if(databaseUser.getType().equalsIgnoreCase("customer")) {
+                    if (databaseUser != null) {
+                        if (userName.equalsIgnoreCase(databaseUser.getFirstName() + databaseUser.getLastName())) {
+                            if (databaseUser.getType().equalsIgnoreCase("customer")) {
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 intent.putExtra("user_id", databaseUser.getUserID());
                                 startActivity(intent);
-                            }
-                            else {
+                            } else {
                                 //diagnostic
                                 Intent intent = new Intent(LoginActivity.this, CreateUserActivity.class);
                                 intent.putExtra("user_name", databaseUser.getFirstName() + " " + databaseUser.getLastName());
                                 startActivity(intent);
                             }
-                        }
-                        else {
+                        } else {
                             Toast.makeText(LoginActivity.this, "שם משתמש לא נכון", Toast.LENGTH_SHORT).show();
                         }
                     }
-                }
-                else {
+                } else {
                     Toast.makeText(LoginActivity.this, "סיסמא לא נכונה", Toast.LENGTH_SHORT).show();
                 }
             }

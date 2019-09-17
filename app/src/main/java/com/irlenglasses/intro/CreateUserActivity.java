@@ -32,7 +32,7 @@ public class CreateUserActivity extends AppCompatActivity implements
 
     enum UserType {diagnostic, customer}
     private UserType userType = UserType.customer;
-    String[] colors = { "None", "Red", "Green", "Blue", "Yellow"};
+    String[] colors = {"None", "Red", "Green", "Blue", "Yellow", "Purple", "Gray", "Pink"};
 
 
     @Override
@@ -55,10 +55,9 @@ public class CreateUserActivity extends AppCompatActivity implements
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 int selectedId = radioGroup.getCheckedRadioButtonId();
-                if(selectedId == R.id.radioButton) {
+                if (selectedId == R.id.radioButton) {
                     userType = UserType.diagnostic;
-                }
-                else {
+                } else {
                     //customer
                     userType = UserType.customer;
                 }
@@ -68,7 +67,7 @@ public class CreateUserActivity extends AppCompatActivity implements
 
 
         colorSpinner.setOnItemSelectedListener(this);
-        ArrayAdapter<String> aa = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, colors);
+        ArrayAdapter<String> aa = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, colors);
         aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         colorSpinner.setAdapter(aa);
     }
@@ -85,32 +84,31 @@ public class CreateUserActivity extends AppCompatActivity implements
 
     private void onCreateUserButtonClicked() {
         String firstName = firstNameEditText.getText().toString();
-        if(firstName.isEmpty()) {
+        if (firstName.isEmpty()) {
             Toast.makeText(this, "לא הוזן שם פרטי", Toast.LENGTH_SHORT).show();
             return;
         }
         String lastName = lastNameEditText.getText().toString();
-        if(lastName.isEmpty()) {
+        if (lastName.isEmpty()) {
             Toast.makeText(this, "לא הוזן שם משפחה", Toast.LENGTH_SHORT).show();
             return;
         }
         String userID = idEditText.getText().toString();
-        if(userID.isEmpty()) {
+        if (userID.isEmpty()) {
             Toast.makeText(this, "לא הוזן תעודת זהות", Toast.LENGTH_SHORT).show();
             return;
         }
 
         DatabaseCameraColor cameraColor = new DatabaseCameraColor();
         cameraColor.setUserID(userID);
-        if(currColor.equalsIgnoreCase("None")) {
-            if(colorRGBEditText.getText().toString().isEmpty()) {
+        if (currColor.equalsIgnoreCase("None")) {
+            if (colorRGBEditText.getText().toString().isEmpty()) {
                 Toast.makeText(this, "לא נבחר צבע", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             cameraColor.setColorID(colorRGBEditText.getText().toString());
-        }
-        else {
+        } else {
             cameraColor.setColorName(currColor);
         }
 
@@ -123,7 +121,7 @@ public class CreateUserActivity extends AppCompatActivity implements
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater=getMenuInflater();
+        MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
 
         return super.onCreateOptionsMenu(menu);
@@ -131,8 +129,7 @@ public class CreateUserActivity extends AppCompatActivity implements
 
     @Override
     public boolean onOptionsItemSelected(@NotNull MenuItem item) {
-        switch(item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.action_create_user:
                 onCreateUserButtonClicked();
                 finish();
