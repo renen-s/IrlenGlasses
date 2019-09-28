@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#59FFDAD8"
@@ -36,7 +37,9 @@
         android:layout_marginRight="27dp"
         android:text="@string/CreateText"
         android:textColor="#EB5E1919"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="27dp" />
 
     <EditText
         android:id="@+id/editText2"
@@ -51,7 +54,8 @@
         android:hint="@string/FNameHint"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
-         />
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="27dp" />
 
     <EditText
         android:id="@+id/editText"
@@ -65,7 +69,10 @@
         android:ems="10"
         android:hint="@string/lastName"
         android:inputType="textPersonName"
-        android:autofillHints="" />
+        android:autofillHints=""
+        android:layout_marginEnd="27dp"
+        android:layout_alignParentEnd="true"
+        tools:targetApi="o" />
 
     <EditText
         android:id="@+id/editText4"
@@ -79,7 +86,9 @@
         android:ems="10"
         android:hint="@string/IDHint"
         android:inputType="textPersonName"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="27dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -183,7 +192,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/colorTextTitle"
                 android:layout_marginTop="8dp"
-                android:inputType="numberSigned"
+                android:inputType="textCapCharacters"
                 android:hint="77DC143C"
                 android:layout_alignParentRight="true"
                 />
