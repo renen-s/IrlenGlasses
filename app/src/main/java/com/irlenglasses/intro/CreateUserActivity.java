@@ -101,15 +101,17 @@ public class CreateUserActivity extends AppCompatActivity implements
 
         DatabaseCameraColor cameraColor = new DatabaseCameraColor();
         cameraColor.setUserID(userID);
-        if (currColor.equalsIgnoreCase("None")) {
+        if (currColor.equalsIgnoreCase("None") && userType.equals("customer")) {
             if (colorRGBEditText.getText().toString().isEmpty()) {
                 Toast.makeText(this, "לא נבחר צבע", Toast.LENGTH_SHORT).show();
                 return;
             }
-
             cameraColor.setColorID(colorRGBEditText.getText().toString());
         } else {
-            cameraColor.setColorName(currColor);
+            if (userType.equals("customer"))
+                cameraColor.setColorName(currColor);
+            else
+                currColor = "None";
         }
 
         DatabaseAPI.getInstance().SaveCameraColor(cameraColor);
