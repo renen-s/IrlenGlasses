@@ -63,7 +63,7 @@ public class ColorBlendingActivity extends AppCompatActivity {
             }
 
         } else {
-            Toast.makeText(this, "Invalid Hex Numbers", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "מספר הקסדצימלי לא תקין", Toast.LENGTH_SHORT).show();
         }
 
     }
