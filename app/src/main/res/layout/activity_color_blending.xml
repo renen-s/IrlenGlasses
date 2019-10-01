@@ -30,8 +30,8 @@
         android:layout_alignBottom="@+id/imageView4"
         android:layout_marginStart="134dp"
         android:layout_marginLeft="134dp"
-        android:layout_marginEnd="-96dp"
-        android:layout_marginRight="-96dp"
+        android:layout_marginEnd="-99dp"
+        android:layout_marginRight="-99dp"
         android:layout_marginBottom="-174dp"
         android:text="@string/pockHue2" />
 
@@ -46,8 +46,8 @@
         android:layout_alignBottom="@+id/imageView4"
         android:layout_marginStart="135dp"
         android:layout_marginLeft="135dp"
-        android:layout_marginEnd="-97dp"
-        android:layout_marginRight="-97dp"
+        android:layout_marginEnd="-100dp"
+        android:layout_marginRight="-100dp"
         android:layout_marginBottom="-116dp"
         android:text="@string/pickHue1" />
 
@@ -56,15 +56,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView4"
-        android:layout_alignStart="@+id/imageView4"
-        android:layout_alignLeft="@+id/imageView4"
-        android:layout_alignEnd="@+id/imageView4"
-        android:layout_alignRight="@+id/imageView4"
-        android:layout_marginStart="7dp"
-        android:layout_marginLeft="7dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="151dp"
+        android:layout_marginLeft="151dp"
         android:layout_marginTop="209dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginRight="172dp"
         android:text="@string/colorBlndBtn" />
 
     <EditText
@@ -114,13 +114,13 @@
         android:layout_below="@+id/buttonColorBlend"
         android:layout_alignStart="@+id/buttonColorBlend"
         android:layout_alignLeft="@+id/buttonColorBlend"
-        android:layout_alignEnd="@+id/buttonColorBlend"
-        android:layout_alignRight="@+id/buttonColorBlend"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
         android:layout_marginTop="58dp"
-        android:layout_marginEnd="-112dp"
-        android:layout_marginRight="-112dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:text="@string/blendedColor" />
 
     <TextView
