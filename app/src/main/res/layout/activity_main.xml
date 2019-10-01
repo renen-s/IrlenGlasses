@@ -10,27 +10,34 @@
     android:orientation="vertical"
     tools:context=".customer.MainActivity">
 
+    <Button
+        android:id="@+id/filterCameraView"
+        android:layout_width="395dp"
+        android:layout_height="138dp"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/buttonCameraName" />
+
+    <Button
+        android:id="@+id/colorBlender"
+        android:layout_width="395dp"
+        android:layout_height="138dp"
+        android:layout_below="@+id/imageView"
+        android:layout_marginTop="201dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/buttonColorBlend" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="256dp"
         android:layout_height="256dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="24dp"
-        android:layout_weight="1"
         android:contentDescription="@string/logoDesc"
         android:scaleType="centerInside"
         app:srcCompat="@drawable/logo"
         tools:srcCompat="@drawable/logo" />
-
-    <Button
-        android:id="@+id/filterCameraView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/imageView"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="24dp"
-        android:layout_weight="1"
-        android:text="@string/buttonCameraName" />
 
 
 </RelativeLayout>

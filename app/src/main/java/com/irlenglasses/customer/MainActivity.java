@@ -15,12 +15,23 @@ public class MainActivity extends AppCompatActivity {
 
     Button btn;
     String mUserID;
+    Button buttonn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+
+            buttonn = findViewById(R.id.colorBlender);
+            buttonn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    openActivityColorBlendingActivity();
+                }
+            });
+
+
             mUserID = getIntent().getStringExtra("user_id");
 
             btn = findViewById(R.id.filterCameraView);
@@ -41,5 +52,11 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    public void openActivityColorBlendingActivity() {
+        Intent intent1 = new Intent(MainActivity.this, ColorBlendingActivity.class);
+        startActivity(intent1);
+
     }
 }

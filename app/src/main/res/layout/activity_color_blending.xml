@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#59FFDAD8"
+    tools:context=".customer.ColorBlendingActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="@dimen/def_margin"
+        android:layout_marginLeft="@dimen/def_margin"
+        android:layout_marginTop="@dimen/LogoSideMargin"
+        android:layout_marginEnd="@dimen/def_margin"
+        android:contentDescription="@string/Image"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignEnd="@+id/imageView4"
+        android:layout_alignRight="@+id/imageView4"
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_marginStart="134dp"
+        android:layout_marginLeft="134dp"
+        android:layout_marginEnd="-96dp"
+        android:layout_marginRight="-96dp"
+        android:layout_marginBottom="-174dp"
+        android:text="@string/pockHue2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignEnd="@+id/imageView4"
+        android:layout_alignRight="@+id/imageView4"
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_marginStart="135dp"
+        android:layout_marginLeft="135dp"
+        android:layout_marginEnd="-97dp"
+        android:layout_marginRight="-97dp"
+        android:layout_marginBottom="-116dp"
+        android:text="@string/pickHue1" />
+
+    <Button
+        android:id="@+id/buttonColorBlend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignEnd="@+id/imageView4"
+        android:layout_alignRight="@+id/imageView4"
+        android:layout_marginStart="7dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="209dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:text="@string/colorBlndBtn" />
+
+    <EditText
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignEnd="@+id/imageView4"
+        android:layout_alignRight="@+id/imageView4"
+        android:layout_marginStart="-5dp"
+        android:layout_marginLeft="-5dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@android:drawable/screen_background_light"
+        android:hint="@string/placeHolderHue2"
+        android:importantForAutofill="no"
+        android:inputType="textCapCharacters"
+        android:text="@string/placeHolderHue2" />
+
+    <EditText
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignEnd="@+id/imageView4"
+        android:layout_alignRight="@+id/imageView4"
+        android:layout_marginStart="-9dp"
+        android:layout_marginLeft="-9dp"
+        android:layout_marginTop="94dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:background="@android:drawable/screen_background_light"
+        android:inputType="textCapCharacters"
+        android:hint="@string/placeHolderHue1"
+        android:importantForAutofill="no"
+        android:text="@string/placeHolderHue1" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonColorBlend"
+        android:layout_alignStart="@+id/buttonColorBlend"
+        android:layout_alignLeft="@+id/buttonColorBlend"
+        android:layout_alignEnd="@+id/buttonColorBlend"
+        android:layout_alignRight="@+id/buttonColorBlend"
+        android:layout_marginStart="120dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="-112dp"
+        android:layout_marginRight="-112dp"
+        android:text="@string/blendedColor" />
+
+    <TextView
+        android:id="@+id/blendedHuesRes"
+        android:layout_width="136dp"
+        android:layout_height="69dp"
+        android:layout_alignStart="@+id/buttonColorBlend"
+        android:layout_alignLeft="@+id/buttonColorBlend"
+        android:layout_alignEnd="@+id/buttonColorBlend"
+        android:layout_alignRight="@+id/buttonColorBlend"
+        android:layout_alignBottom="@+id/buttonColorBlend"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-17dp"
+        android:layout_marginLeft="-17dp"
+        android:layout_marginEnd="-29dp"
+        android:layout_marginRight="-29dp"
+        android:layout_marginBottom="103dp"
+        android:text="@string/blendedHues" />
+
+
+</RelativeLayout>

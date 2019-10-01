@@ -57,9 +57,19 @@ public class CreateUserActivity extends AppCompatActivity implements
                 int selectedId = radioGroup.getCheckedRadioButtonId();
                 if (selectedId == R.id.radioButton) {
                     userType = UserType.diagnostic;
+                    colorRGBEditText.setEnabled(false);
+                    colorRGBEditText.setFocusable(false);
+                    colorSpinner.setEnabled(false);
+                    colorSpinner.setClickable(false);
                 } else {
                     //customer
                     userType = UserType.customer;
+                    colorSpinner.setEnabled(true);
+                    colorSpinner.setClickable(true);
+                    colorRGBEditText.setEnabled(true);
+                    colorRGBEditText.setFocusable(true);
+
+
                 }
 
             }
@@ -75,6 +85,7 @@ public class CreateUserActivity extends AppCompatActivity implements
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         currColor = colors[i];
+
     }
 
     @Override
@@ -95,7 +106,7 @@ public class CreateUserActivity extends AppCompatActivity implements
         }
         String userID = idEditText.getText().toString();
         if (userID.isEmpty()) {
-            Toast.makeText(this, "לא הוזן תעודת זהות", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "לא הוזנה תעודת זהות", Toast.LENGTH_SHORT).show();
             return;
         }
 
