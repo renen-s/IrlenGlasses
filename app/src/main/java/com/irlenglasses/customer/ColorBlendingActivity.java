@@ -53,13 +53,12 @@ public class ColorBlendingActivity extends AppCompatActivity {
         }
 
         if (isColorHexValue(hue1) && isColorHexValue(hue2)) {
-            if (!(hue2.isEmpty() && hue1.isEmpty())) {
-                int intColorForHue1 = Color.parseColor(hue1);
-                int intColorForHue2 = Color.parseColor(hue2);
-                int BlendedColorRes = ColorUtils.blendARGB(intColorForHue1, intColorForHue2, blendRatio);
-                TextView colorBox = findViewById(R.id.blendedHuesRes);
-                colorBox.setBackgroundColor(BlendedColorRes);
-            }
+
+            int intColorForHue1 = Color.parseColor(hue1);
+            int intColorForHue2 = Color.parseColor(hue2);
+            int BlendedColorRes = ColorUtils.blendARGB(intColorForHue1, intColorForHue2, blendRatio);
+            TextView colorBox = findViewById(R.id.blendedHuesRes);
+            colorBox.setBackgroundColor(BlendedColorRes);
 
         } else {
             Toast.makeText(this, "מספר הקסדצימלי לא תקין", Toast.LENGTH_SHORT).show();
