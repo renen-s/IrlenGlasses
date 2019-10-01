@@ -21,7 +21,6 @@ public class ColorBlendingActivity extends AppCompatActivity {
 
     private EditText Hue1TextView;
     private TextView Hue2TextView;
-    private Button colorBlendButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +30,7 @@ public class ColorBlendingActivity extends AppCompatActivity {
         Hue1TextView = findViewById(R.id.textView6);
         Hue2TextView = findViewById(R.id.textView7);
 
-        colorBlendButton = findViewById(R.id.buttonColorBlend);
+        Button colorBlendButton = findViewById(R.id.buttonColorBlend);
         colorBlendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
