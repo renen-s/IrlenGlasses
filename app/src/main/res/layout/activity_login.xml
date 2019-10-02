@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/ApplicationBackgroundColor"
+    android:hapticFeedbackEnabled="false"
     android:orientation="vertical"
     android:visibility="visible"
     tools:visibility="visible">
@@ -31,13 +32,14 @@
         android:layout_marginEnd="151dp"
         android:layout_marginRight="151dp"
         android:layout_marginBottom="3dp"
+        android:autofillHints=""
         android:background="#FFFFFF"
         android:ems="10"
         android:hint="@string/passHint"
         android:imeActionLabel="@string/pswd_Lbl"
         android:inputType="numberPassword"
         android:visibility="visible"
-        android:autofillHints="" />
+        tools:targetApi="o" />
 
     <EditText
         android:id="@+id/editText8"
@@ -51,12 +53,12 @@
         android:layout_marginEnd="152dp"
         android:layout_marginRight="152dp"
         android:layout_marginBottom="92dp"
-        android:background="#FFFFFFFF"
+        android:autofillHints=""
+        android:background="#FFFFFF"
         android:hint="@string/userName"
         android:inputType="textPersonName"
-        android:shadowColor="#FFFFFF"
         android:visibility="visible"
-        android:autofillHints="" />
+        tools:targetApi="o" />
 
     <ImageView
         android:id="@+id/imageView3"
