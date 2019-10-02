@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">IrlenGlasses</string>
     <string name="action_settings">Settings</string>
-    <string name="buttonCameraName">Camera view</string>
+    <string name="buttonCameraName">Camera Filter</string>
     <string name="appNameText">IrelanGlasses App</string>
     <string name="login">login user</string>
     <string name="logoDesc">IrlenLogo</string>
@@ -33,4 +33,6 @@
     <string name="placeHolderHue2">#5504F0</string>
     <string name="blendedColor">צבע מעורבל:</string>
     <string name="blendedHues" />
+    <string name="colorpalleticon">ColorPalletIcon</string>
+    <string name="cameraicon">cameraIcon</string>
 </resources>
