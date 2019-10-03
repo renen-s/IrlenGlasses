@@ -72,6 +72,7 @@ public class CreateUserActivity extends AppCompatActivity implements
                     colorSpinner.setClickable(true);
                     colorRGBEditText.setEnabled(true);
                     colorRGBEditText.setFocusable(true);
+                    colorRGBEditText.setFocusableInTouchMode(true);
 
 
                 }
