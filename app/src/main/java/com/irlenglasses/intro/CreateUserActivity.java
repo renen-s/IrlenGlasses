@@ -49,7 +49,7 @@ public class CreateUserActivity extends AppCompatActivity implements
         colorRGBEditText = findViewById(R.id.colorRGBEditText);
 
         String name = getIntent().getStringExtra("user_name");
-        greetingTextView.setText(getString(R.string.greeting_text_prefix) + name);
+        greetingTextView.setText(getString(R.string.greeting_text_prefix)+" "+ name);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
