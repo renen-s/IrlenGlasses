@@ -21,6 +21,9 @@ import com.irlenglasses.database.DatabaseAPI;
 import com.irlenglasses.database.models.DatabaseCameraColor;
 import com.irlenglasses.database.models.DatabaseUser;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class CreateUserActivity extends AppCompatActivity implements
         AdapterView.OnItemSelectedListener {
     private EditText firstNameEditText, lastNameEditText, idEditText;
@@ -31,6 +34,7 @@ public class CreateUserActivity extends AppCompatActivity implements
     private EditText colorRGBEditText;
 
     enum UserType {diagnostic, customer}
+
     private UserType userType = UserType.customer;
     String[] colors = {"None", "Red", "Green", "Blue", "Yellow", "Purple", "Gray", "Pink"};
 
@@ -49,7 +53,7 @@ public class CreateUserActivity extends AppCompatActivity implements
         colorRGBEditText = findViewById(R.id.colorRGBEditText);
 
         String name = getIntent().getStringExtra("user_name");
-        greetingTextView.setText(getString(R.string.greeting_text_prefix)+" "+ name);
+        greetingTextView.setText(getString(R.string.greeting_text_prefix) + " " + name);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -107,6 +111,9 @@ public class CreateUserActivity extends AppCompatActivity implements
         String userID = idEditText.getText().toString();
         if (userID.isEmpty()) {
             Toast.makeText(this, "לא הוזנה תעודת זהות", Toast.LENGTH_SHORT).show();
+            setContentView(R.layout.activity_create_user);
+        } else if (!isPasswordValidID(userID)) {
+            Toast.makeText(this, "תעודת זהות תקינה הינה 9 ספרות רצופות בלבד", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -150,5 +157,13 @@ public class CreateUserActivity extends AppCompatActivity implements
         }
 
         return true;
+    }
+
+    private boolean isPasswordValidID(String str) {
+        boolean res;
+        Pattern colorPattern = Pattern.compile("^[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$");
+        Matcher m = colorPattern.matcher(str);
+        res = m.matches();
+        return (res);
     }
 }

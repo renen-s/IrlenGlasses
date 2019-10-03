@@ -51,7 +51,7 @@ public class ColorBlendingActivity extends AppCompatActivity {
             Toast.makeText(this, "לא נבחר גוון שני", Toast.LENGTH_SHORT).show();
         }
 
-        if (isColorHexValue(hue1) && isColorHexValue(hue2)) {
+        if (isColorValidHexadecimalValue(hue1) && isColorValidHexadecimalValue(hue2)) {
 
             int intColorForHue1 = Color.parseColor(hue1);
             int intColorForHue2 = Color.parseColor(hue2);
@@ -66,7 +66,7 @@ public class ColorBlendingActivity extends AppCompatActivity {
     }
 
 
-    private boolean isColorHexValue(String str) {
+    private boolean isColorValidHexadecimalValue(String str) {
         boolean res;
         Pattern colorPattern = Pattern.compile("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$");
         Matcher m = colorPattern.matcher(str);
