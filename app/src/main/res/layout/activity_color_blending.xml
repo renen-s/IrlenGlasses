@@ -118,19 +118,38 @@
 
     <TextView
         android:id="@+id/blended_color_text"
-        android:layout_width="110dp"
-        android:layout_height="68dp"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
         android:layout_below="@+id/button_activate_colorblend"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="-10dp"
-        android:layout_marginLeft="-10dp"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginRight="27dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginRight="7dp"
         android:layout_toEndOf="@+id/res_blended_color_box"
         android:layout_toRightOf="@+id/res_blended_color_box"
         android:text="@string/blendedColor" />
+
+    <TextView
+        android:id="@+id/blended_color_marker_separator"
+        style="@android:style/Widget.Holo.TextView"
+        android:layout_width="21dp"
+        android:layout_height="29dp"
+        android:layout_below="@+id/button_activate_colorblend"
+        android:layout_alignBottom="@+id/res_blended_color_box"
+        android:layout_marginTop="86dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="42dp"
+        android:layout_toStartOf="@+id/blended_color_text"
+        android:layout_toLeftOf="@+id/blended_color_text"
+        android:width="5dp"
+        android:maxWidth="5dp"
+        android:minWidth="5dp"
+        android:text="@string/separator_mark"
+        app:autoSizeTextType="uniform" />
 
     <TextView
         android:id="@+id/res_blended_color_box"
