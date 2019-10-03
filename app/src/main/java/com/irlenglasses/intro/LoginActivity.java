@@ -19,7 +19,7 @@ import com.irlenglasses.database.DatabaseAPI;
 import com.irlenglasses.database.models.DatabaseUser;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText userNameEditTxt, passwordEditText;
+    EditText userNameTextInput, passwordTextInput;
     Button loginButton;
 
     @Override
@@ -27,8 +27,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        userNameEditTxt = findViewById(R.id.editText8);
-        passwordEditText = findViewById(R.id.editText9);
+        userNameTextInput = findViewById(R.id.login_user_name_input_field);
+        passwordTextInput = findViewById(R.id.login_password_input_field);
 
         loginButton = findViewById(R.id.loginButton);
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -40,12 +40,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void onLoginButtonClicked() {
-        final String userName = userNameEditTxt.getText().toString();
+        final String userName = userNameTextInput.getText().toString();
         if (userName.isEmpty()) {
             Toast.makeText(this, "לא הוזן שם משתמש", Toast.LENGTH_SHORT).show();
             return;
         }
-        String password = passwordEditText.getText().toString();
+        String password = passwordTextInput.getText().toString();
         if (password.isEmpty()) {
             Toast.makeText(this, "לא הוזנה סיסמא", Toast.LENGTH_SHORT).show();
             return;

@@ -26,8 +26,8 @@ public class CreateUserActivity extends AppCompatActivity implements
     private EditText firstNameEditText, lastNameEditText, idEditText;
     RadioGroup radioGroup;
     private Spinner colorSpinner;
-    private String currColor = "Red";
-    private TextView nameTextView;
+    private String currentColorValue = "None";
+    private TextView greetingTextView;
     private EditText colorRGBEditText;
 
     enum UserType {diagnostic, customer}
@@ -40,16 +40,16 @@ public class CreateUserActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_user);
 
-        firstNameEditText = findViewById(R.id.editText2);
-        lastNameEditText = findViewById(R.id.editText);
-        idEditText = findViewById(R.id.editText4);
+        firstNameEditText = findViewById(R.id.first_name_input);
+        lastNameEditText = findViewById(R.id.last_name_input);
+        idEditText = findViewById(R.id.password_id_number_input);
         colorSpinner = findViewById(R.id.spinner);
-        nameTextView = findViewById(R.id.nameTextView);
+        greetingTextView = findViewById(R.id.greeting_text_input);
         radioGroup = findViewById(R.id.radioGroup);
         colorRGBEditText = findViewById(R.id.colorRGBEditText);
 
         String name = getIntent().getStringExtra("user_name");
-        nameTextView.setText("Hey " + name);
+        greetingTextView.setText(getString(R.string.greeting_text_prefix) + name);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -84,7 +84,7 @@ public class CreateUserActivity extends AppCompatActivity implements
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        currColor = colors[i];
+        currentColorValue = colors[i];
 
     }
 
@@ -112,17 +112,17 @@ public class CreateUserActivity extends AppCompatActivity implements
 
         DatabaseCameraColor cameraColor = new DatabaseCameraColor();
         cameraColor.setUserID(userID);
-        if (currColor.equalsIgnoreCase("None") && userType.equals("customer")) {
+        if (currentColorValue.equalsIgnoreCase("None") && userType.equals(UserType.customer)) {
             if (colorRGBEditText.getText().toString().isEmpty()) {
                 Toast.makeText(this, "לא נבחר צבע", Toast.LENGTH_SHORT).show();
                 return;
             }
             cameraColor.setColorID(colorRGBEditText.getText().toString());
         } else {
-            if (userType.equals("customer"))
-                cameraColor.setColorName(currColor);
+            if (userType.equals(UserType.customer))
+                cameraColor.setColorName(currentColorValue);
             else
-                currColor = "None";
+                currentColorValue = "None";
         }
 
         DatabaseAPI.getInstance().SaveCameraColor(cameraColor);

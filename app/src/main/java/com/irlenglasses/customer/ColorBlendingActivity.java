@@ -19,18 +19,17 @@ import java.util.regex.Pattern;
 
 public class ColorBlendingActivity extends AppCompatActivity {
 
-    private EditText Hue1TextView;
-    private TextView Hue2TextView;
+    private EditText hue1TextInput, hue2TextInupt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_color_blending);
 
-        Hue1TextView = findViewById(R.id.textView6);
-        Hue2TextView = findViewById(R.id.textView7);
+        hue1TextInput = findViewById(R.id.first_hue_input);
+        hue2TextInupt = findViewById(R.id.second_hue_input);
 
-        Button colorBlendButton = findViewById(R.id.buttonColorBlend);
+        Button colorBlendButton = findViewById(R.id.button_activate_colorblend);
         colorBlendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,12 +41,12 @@ public class ColorBlendingActivity extends AppCompatActivity {
 
     private void onHueBlendButtonClicked() {
         float blendRatio = (float) 0.5;
-        String hue1 = Hue1TextView.getText().toString();
+        String hue1 = hue1TextInput.getText().toString();
         if (hue1.isEmpty()) {
             Toast.makeText(this, "לא נבחר גוון ראשון", Toast.LENGTH_SHORT).show();
         }
 
-        String hue2 = Hue2TextView.getText().toString();
+        String hue2 = hue2TextInupt.getText().toString();
         if (hue2.isEmpty()) {
             Toast.makeText(this, "לא נבחר גוון שני", Toast.LENGTH_SHORT).show();
         }
@@ -57,7 +56,7 @@ public class ColorBlendingActivity extends AppCompatActivity {
             int intColorForHue1 = Color.parseColor(hue1);
             int intColorForHue2 = Color.parseColor(hue2);
             int BlendedColorRes = ColorUtils.blendARGB(intColorForHue1, intColorForHue2, blendRatio);
-            TextView colorBox = findViewById(R.id.blendedHuesRes);
+            TextView colorBox = findViewById(R.id.res_blended_color_box);
             colorBox.setBackgroundColor(BlendedColorRes);
 
         } else {

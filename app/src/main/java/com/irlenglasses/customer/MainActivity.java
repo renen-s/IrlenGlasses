@@ -13,9 +13,8 @@ import com.irlenglasses.diagnostic.CameraViewer;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button btn;
-    String mUserID;
-    Button buttonn;
+    Button navigateToCameraFilterButton, navigateToColorBlendButton;
+    String loggedInUserID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
-            buttonn = findViewById(R.id.colorBlender);
-            buttonn.setOnClickListener(new View.OnClickListener() {
+            navigateToColorBlendButton = findViewById(R.id.navigate_to_color_blender_button);
+            navigateToColorBlendButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     openActivityColorBlendingActivity();
@@ -32,14 +31,14 @@ public class MainActivity extends AppCompatActivity {
             });
 
 
-            mUserID = getIntent().getStringExtra("user_id");
+            loggedInUserID = getIntent().getStringExtra("user_id");
 
-            btn = findViewById(R.id.filterCameraView);
-            btn.setOnClickListener(new View.OnClickListener() {
+            navigateToCameraFilterButton = findViewById(R.id.navigate_to_camera_filter_button);
+            navigateToCameraFilterButton.setOnClickListener(new View.OnClickListener() {
 
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, CameraViewer.class);
-                    intent.putExtra("user_id", mUserID);
+                    intent.putExtra("user_id", loggedInUserID);
                     startActivity(intent);
                 }
             });

@@ -11,41 +11,45 @@
     tools:context=".customer.MainActivity">
 
     <Button
-        android:id="@+id/filterCameraView"
+        android:id="@+id/navigate_to_camera_filter_button"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="299dp"
+        android:layout_width="wrap_content"
         android:layout_height="135dp"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/main_logo_holder"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="58dp"
-        android:layout_marginLeft="58dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="54dp"
-        android:layout_marginRight="54dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
         android:layout_marginBottom="24dp"
         android:background="@layout/rounded_button_settings"
         android:text="@string/buttonCameraName" />
 
     <Button
-        android:id="@+id/colorBlender"
+        android:id="@+id/navigate_to_color_blender_button"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="310dp"
         android:layout_height="141dp"
-        android:layout_below="@+id/imageView"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="201dp"
-        android:layout_marginEnd="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="51dp"
         android:layout_marginRight="48dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="48dp"
         android:background="@layout/rounded_button_settings"
         android:text="@string/buttonColorBlend" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/main_logo_holder"
         android:layout_width="256dp"
         android:layout_height="256dp"
         android:layout_centerHorizontal="true"
@@ -56,12 +60,12 @@
         tools:srcCompat="@drawable/logo" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/camera_filter_icon"
+        android:layout_width="45dp"
+        android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="374dp"
-        android:contentDescription="@string/cameraicon"/>
+        android:contentDescription="@string/cameraicon" />
 
 
 </RelativeLayout>

@@ -35,4 +35,8 @@
     <string name="blendedHues" />
     <string name="colorpalleticon">ColorPalletIcon</string>
     <string name="cameraicon">cameraIcon</string>
+    <string name="imagecapturearea">imageCaptureArea</string>
+    <string name="hexColor_hint">77DC143C</string>
+    <string name="greeting_text_prefix">Hey</string>
+    <string name="poundSignForHexColors">#</string>
 </resources>

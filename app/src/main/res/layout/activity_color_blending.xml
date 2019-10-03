@@ -2,13 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/blend_color_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#59FFDAD8"
     tools:context=".customer.ColorBlendingActivity">
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/logo_holder_internal_layouts"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_alignParentStart="true"
@@ -26,30 +27,14 @@
         app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/first_hue_field_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageView4"
-        android:layout_alignLeft="@+id/imageView4"
-        android:layout_alignEnd="@+id/imageView4"
-        android:layout_alignRight="@+id/imageView4"
-        android:layout_alignBottom="@+id/imageView4"
-        android:layout_marginStart="134dp"
-        android:layout_marginLeft="134dp"
-        android:layout_marginEnd="-99dp"
-        android:layout_marginRight="-99dp"
-        android:layout_marginBottom="-174dp"
-        android:text="@string/pockHue2" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/imageView4"
-        android:layout_alignLeft="@+id/imageView4"
-        android:layout_alignEnd="@+id/imageView4"
-        android:layout_alignRight="@+id/imageView4"
-        android:layout_alignBottom="@+id/imageView4"
+        android:layout_alignStart="@+id/logo_holder_internal_layouts"
+        android:layout_alignLeft="@+id/logo_holder_internal_layouts"
+        android:layout_alignEnd="@+id/logo_holder_internal_layouts"
+        android:layout_alignRight="@+id/logo_holder_internal_layouts"
+        android:layout_alignBottom="@+id/logo_holder_internal_layouts"
         android:layout_marginStart="135dp"
         android:layout_marginLeft="135dp"
         android:layout_marginEnd="-100dp"
@@ -57,12 +42,68 @@
         android:layout_marginBottom="-116dp"
         android:text="@string/pickHue1" />
 
+    <TextView
+        android:id="@+id/second_hue_field_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/logo_holder_internal_layouts"
+        android:layout_alignLeft="@+id/logo_holder_internal_layouts"
+        android:layout_alignEnd="@+id/logo_holder_internal_layouts"
+        android:layout_alignRight="@+id/logo_holder_internal_layouts"
+        android:layout_alignBottom="@+id/logo_holder_internal_layouts"
+        android:layout_marginStart="134dp"
+        android:layout_marginLeft="134dp"
+        android:layout_marginEnd="-99dp"
+        android:layout_marginRight="-99dp"
+        android:layout_marginBottom="-174dp"
+        android:text="@string/pockHue2" />
+
+    <EditText
+        android:id="@+id/first_hue_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo_holder_internal_layouts"
+        android:layout_alignStart="@+id/logo_holder_internal_layouts"
+        android:layout_alignLeft="@+id/logo_holder_internal_layouts"
+        android:layout_alignEnd="@+id/logo_holder_internal_layouts"
+        android:layout_alignRight="@+id/logo_holder_internal_layouts"
+        android:layout_marginStart="-9dp"
+        android:layout_marginLeft="-9dp"
+        android:layout_marginTop="94dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:background="@android:drawable/screen_background_light"
+        android:hint="@string/placeHolderHue1"
+        android:importantForAutofill="no"
+        android:inputType="textCapCharacters"
+        android:text="@string/placeHolderHue1" />
+
+    <EditText
+        android:id="@+id/second_hue_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo_holder_internal_layouts"
+        android:layout_alignStart="@+id/logo_holder_internal_layouts"
+        android:layout_alignLeft="@+id/logo_holder_internal_layouts"
+        android:layout_alignEnd="@+id/logo_holder_internal_layouts"
+        android:layout_alignRight="@+id/logo_holder_internal_layouts"
+        android:layout_marginStart="-5dp"
+        android:layout_marginLeft="-5dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@android:drawable/screen_background_light"
+        android:hint="@string/placeHolderHue2"
+        android:importantForAutofill="no"
+        android:inputType="textCapCharacters"
+        android:text="@string/placeHolderHue2" />
+
     <Button
-        android:id="@+id/buttonColorBlend"
+        android:id="@+id/button_activate_colorblend"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="205dp"
         android:layout_height="45dp"
-        android:layout_below="@+id/imageView4"
+        android:layout_below="@+id/logo_holder_internal_layouts"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
@@ -75,51 +116,11 @@
         android:background="@layout/rounded_button_settings"
         android:text="@string/colorBlndBtn" />
 
-    <EditText
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView4"
-        android:layout_alignStart="@+id/imageView4"
-        android:layout_alignLeft="@+id/imageView4"
-        android:layout_alignEnd="@+id/imageView4"
-        android:layout_alignRight="@+id/imageView4"
-        android:layout_marginStart="-5dp"
-        android:layout_marginLeft="-5dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        android:background="@android:drawable/screen_background_light"
-        android:hint="@string/placeHolderHue2"
-        android:importantForAutofill="no"
-        android:inputType="textCapCharacters"
-        android:text="@string/placeHolderHue2" />
-
-    <EditText
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView4"
-        android:layout_alignStart="@+id/imageView4"
-        android:layout_alignLeft="@+id/imageView4"
-        android:layout_alignEnd="@+id/imageView4"
-        android:layout_alignRight="@+id/imageView4"
-        android:layout_marginStart="-9dp"
-        android:layout_marginLeft="-9dp"
-        android:layout_marginTop="94dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginRight="31dp"
-        android:background="@android:drawable/screen_background_light"
-        android:inputType="textCapCharacters"
-        android:hint="@string/placeHolderHue1"
-        android:importantForAutofill="no"
-        android:text="@string/placeHolderHue1" />
-
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/blended_color_text"
         android:layout_width="110dp"
         android:layout_height="68dp"
-        android:layout_below="@+id/buttonColorBlend"
+        android:layout_below="@+id/button_activate_colorblend"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginStart="-10dp"
@@ -127,19 +128,19 @@
         android:layout_marginTop="43dp"
         android:layout_marginEnd="27dp"
         android:layout_marginRight="27dp"
-        android:layout_toEndOf="@+id/blendedHuesRes"
-        android:layout_toRightOf="@+id/blendedHuesRes"
+        android:layout_toEndOf="@+id/res_blended_color_box"
+        android:layout_toRightOf="@+id/res_blended_color_box"
         android:text="@string/blendedColor" />
 
     <TextView
-        android:id="@+id/blendedHuesRes"
+        android:id="@+id/res_blended_color_box"
         android:layout_width="149dp"
         android:layout_height="79dp"
-        android:layout_alignStart="@+id/buttonColorBlend"
-        android:layout_alignLeft="@+id/buttonColorBlend"
-        android:layout_alignEnd="@+id/buttonColorBlend"
-        android:layout_alignRight="@+id/buttonColorBlend"
-        android:layout_alignBottom="@+id/buttonColorBlend"
+        android:layout_alignStart="@+id/button_activate_colorblend"
+        android:layout_alignLeft="@+id/button_activate_colorblend"
+        android:layout_alignEnd="@+id/button_activate_colorblend"
+        android:layout_alignRight="@+id/button_activate_colorblend"
+        android:layout_alignBottom="@+id/button_activate_colorblend"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="21dp"
         android:layout_marginLeft="21dp"
@@ -149,17 +150,17 @@
         android:text="@string/blendedHues" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/color_pellet_icon_holder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="21dp"
         android:layout_marginRight="21dp"
         android:layout_marginBottom="116dp"
-        android:layout_toStartOf="@+id/blendedHuesRes"
-        android:layout_toLeftOf="@+id/blendedHuesRes"
-        app:srcCompat="@drawable/paint_icon_pallet"
-        android:contentDescription="@string/colorpalleticon" />
+        android:layout_toStartOf="@+id/res_blended_color_box"
+        android:layout_toLeftOf="@+id/res_blended_color_box"
+        android:contentDescription="@string/colorpalleticon"
+        app:srcCompat="@drawable/paint_icon_pallet" />
 
 
 </RelativeLayout>

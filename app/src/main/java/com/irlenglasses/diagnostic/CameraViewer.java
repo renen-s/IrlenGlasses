@@ -42,17 +42,17 @@ public class CameraViewer extends Activity {
     private static final String grayRGB = "E6E6E6";
     private static final String pinkRGB = "FFDCF1";
 
-    private ImageView imageView;
-    private String mUserID = "";
+    private ImageView cameraImageView;
+    private String loggedInUserID = "";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camera_view);
 
-        imageView = findViewById(R.id.imageView);
+        cameraImageView = findViewById(R.id.camera_holder);
 
-        mUserID = getIntent().getStringExtra("user_id");
+        loggedInUserID = getIntent().getStringExtra("user_id");
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
@@ -108,7 +108,7 @@ public class CameraViewer extends Activity {
 
     private static Uri createImageFile(Context context) {
         Uri uri = null;
-        File currImageFileTakenFromCamera = null;
+        File currImageFileTakenFromCamera ;
         try {
             currImageFileTakenFromCamera = UtilitiesFiles.createImageFile(context);
             if (currImageFileTakenFromCamera != null) {
@@ -130,11 +130,11 @@ public class CameraViewer extends Activity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        imageView.setImageBitmap(image);
+                        cameraImageView.setImageBitmap(image);
                     }
                 });
 
-                DatabaseAPI.getInstance().SetCameraColorListener(mUserID, new ValueEventListener() {
+                DatabaseAPI.getInstance().SetCameraColorListener(loggedInUserID, new ValueEventListener() {
                     @Override
                     public void onDataChange(@NotNull DataSnapshot dataSnapshot) {
                         if (dataSnapshot.exists()) {
@@ -142,40 +142,40 @@ public class CameraViewer extends Activity {
                             if (cameraColor != null) {
                                 String colorName = cameraColor.getColorName();
                                 String alpha = "99";
-                                String currColor = alpha + cameraColor.getColorID();
+                                String currentColorValue = alpha + cameraColor.getColorID();
 
                                 if (colorName != null && !colorName.isEmpty()) {
                                     switch (colorName) {
                                         case "None":
                                             break;
                                         case "Red":
-                                            currColor = alpha + redRGB;
+                                            currentColorValue = alpha + redRGB;
                                             break;
                                         case "Green":
-                                            currColor = alpha + greenRGB;
+                                            currentColorValue = alpha + greenRGB;
                                             break;
                                         case "Blue":
-                                            currColor = alpha + blueRGB;
+                                            currentColorValue = alpha + blueRGB;
                                             break;
                                         case "Yellow":
-                                            currColor = alpha + yellowRGB;
+                                            currentColorValue = alpha + yellowRGB;
                                             break;
                                         case "Purple":
-                                            currColor = alpha + purpleRGB;
+                                            currentColorValue = alpha + purpleRGB;
                                             break;
                                         case "Gray":
-                                            currColor = alpha + grayRGB;
+                                            currentColorValue = alpha + grayRGB;
                                             break;
                                         case "Pink":
-                                            currColor = alpha + pinkRGB;
+                                            currentColorValue = alpha + pinkRGB;
                                             break;
                                     }
                                 }
-                                final int intColor = Color.parseColor("#" + currColor);
+                                final int intColor = Color.parseColor("#" + currentColorValue);
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        imageView.getDrawable().setColorFilter(intColor, PorterDuff.Mode.MULTIPLY);
+                                        cameraImageView.getDrawable().setColorFilter(intColor, PorterDuff.Mode.MULTIPLY);
                                     }
                                 });
                             }
